@@ -23,7 +23,7 @@ class RegisterController {
                 .status(StatusCodes.CREATED)
                 .send("User created with ID: " + user.userId);
         } catch (e: any) {
-            return res.status(StatusCodes.BAD_REQUEST).send(e.message);
+            return res.status(StatusCodes.CONFLICT).send("User already exists");
         }
     }
 }
